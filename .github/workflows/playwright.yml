@@ -18,7 +18,15 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: |
+        npx playwright test tests/demo/login.spec.js --project chromium --headed
+        npx playwright test tests/demo/registration.spec.js --project chromium --headed
+        npx playwright test tests/demo/addcart.spec.js --project chromium --headed
+        npx playwright test tests/demo/updatecart.spec.js --project chromium --headed
+        npx playwright test tests/demo/checkout.spec.js --project chromium --headed
+        npx playwright test tests/demo/logout.spec.js --project chromium --headed
+        npx playwright test tests/demo/search.spec.js --project chromium --headed
+        npx playwright test tests/demo/productdetails.spec.js --project chromium --headed
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
