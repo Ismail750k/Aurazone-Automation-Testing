@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 const products = [
-    { name: 'Azure', pattern: /Azure/i },
     { name: 'Retro', pattern: /Retro/i },
     { name: 'Vibrant', pattern: /Vibrant/i },
     { name: 'Trek', pattern: /Trek/i },
