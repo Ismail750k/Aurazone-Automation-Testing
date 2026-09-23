@@ -17,7 +17,9 @@ test('Checkout', async ({ page }) => {
     await page.getByRole('button', { name: 'Addresses Manage your' }).click();
     await page.waitForTimeout(3000);
     await page.goto('https://test.aurazone.shop/checkout');
+    await page.waitForTimeout(3000);
     await page.getByRole('button', { name: 'Cash on Delivery Pay when you' }).click();
+    await page.waitForTimeout(3000);
     await page.getByRole('button', { name: 'Place Order →' }).click();
     await page.waitForTimeout(2000);
     await expect(page.getByRole('heading', { name: 'Order Confirmed!' })).toBeVisible();
